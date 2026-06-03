@@ -12,13 +12,15 @@ const WIN = getPrize('kuota15')
 export function KoperPage() {
   const { prize, revealed, expired, setExpired, reveal, reduced } = useGameSession()
   return (
-    <>
-      <GameScreen
-        dapat={GAMES.koper.lead}
-        instruction={GAMES.koper.instruction}
-        expired={expired}
-        onExpire={() => setExpired(true)}
-      >
+    <GameScreen
+      dapat={GAMES.koper.lead}
+      instruction={GAMES.koper.instruction}
+      expired={expired}
+      onExpire={() => setExpired(true)}
+    >
+      {revealed && prize ? (
+        <ResultOverlay prize={prize} />
+      ) : (
         <PickGame
           count={CAMPAIGN.ticketCount}
           disabled={expired || revealed}
@@ -27,8 +29,7 @@ export function KoperPage() {
           onResult={reveal}
           renderItem={(args) => <KoperItem {...args} />}
         />
-      </GameScreen>
-      <ResultOverlay open={revealed} prize={prize} />
-    </>
+      )}
+    </GameScreen>
   )
 }
