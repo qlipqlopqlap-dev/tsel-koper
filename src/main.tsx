@@ -2,17 +2,15 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { MotionConfig } from 'framer-motion'
 import { PhoneFrame } from './components/PhoneFrame'
-import { KoperPage } from './pages/KoperPage'
+import { SpinPage } from './pages/SpinPage'
 import './styles.css'
 
-// Single-game app (Pilih Koper). Renders one game inside the shared phone
-// frame — no router needed; the "home"/claim links are plain <a href> targets
-// resolved from VITE_URL_HOME / VITE_CLAIM_URL (see src/lib/urls.ts).
+// Double variant — Spin (Putar Roda) game served at telkomsel4double on port 5288.
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <MotionConfig reducedMotion="user">
       <PhoneFrame>
-        <KoperPage />
+        <SpinPage />
       </PhoneFrame>
     </MotionConfig>
   </StrictMode>,

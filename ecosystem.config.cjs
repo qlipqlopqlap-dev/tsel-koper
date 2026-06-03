@@ -1,11 +1,11 @@
-// PM2 ecosystem config — Pilih Koper (standalone, port 5283).
-// nginx reverse-proxies telkomsel4.qlipmobile.com → 127.0.0.1:5283.
+// PM2 ecosystem config — Putar Roda (Double) (standalone, port 5288).
+// nginx reverse-proxies telkomsel4double.qlipmobile.com → 127.0.0.1:5288.
 
 module.exports = {
   apps: [
     {
-      name: 'tsel-koper',
-      cwd: '/home/qlip/tsel-koper',
+      name: 'tsel-koper-double',
+      cwd: '/home/qlip/tsel-koper-double',
       script: 'server.mjs',
       interpreter: 'node',
       instances: 1,
@@ -14,7 +14,7 @@ module.exports = {
       env: {
         NODE_ENV: 'production',
         HOST: '127.0.0.1',
-        PORT: '5283',
+        PORT: '5288',
       },
 
       // Restart behavior
@@ -27,8 +27,8 @@ module.exports = {
 
       // Logs
       log_date_format: 'YYYY-MM-DD HH:mm:ss',
-      error_file: '/home/qlip/tsel-koper/logs/tsel-koper.err.log',
-      out_file: '/home/qlip/tsel-koper/logs/tsel-koper.out.log',
+      error_file: '/home/qlip/tsel-koper-double/logs/tsel-koper-double.err.log',
+      out_file: '/home/qlip/tsel-koper-double/logs/tsel-koper-double.out.log',
       merge_logs: true,
       time: true,
     },
