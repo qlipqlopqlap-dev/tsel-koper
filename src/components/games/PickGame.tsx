@@ -40,7 +40,7 @@ export function PickGame({ count, disabled, reduced, prize, onResult, renderItem
   }
 
   return (
-    <div className="grid w-full max-w-[22rem] grid-cols-3 gap-2.5">
+    <div className="grid w-full max-w-[19rem] grid-cols-3 gap-3.5">
       {Array.from({ length: count }, (_, i) => {
         let state: ItemState = 'idle'
         if (selected === i) state = opened ? 'won' : 'opening'
