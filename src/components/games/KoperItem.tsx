@@ -28,21 +28,21 @@ export function KoperItem({ index, state, prize }: { index: number; state: ItemS
   return (
     <span
       className={[
-        'relative flex h-[76%] w-[84%] flex-col items-center',
+        'relative flex h-[90%] w-[96%] flex-col items-center',
         state === 'opening' ? 'animate-wiggle' : '',
         dim ? 'opacity-45' : '',
       ].join(' ')}
     >
-      <span className={`h-2.5 w-7 rounded-t-md border-2 border-b-0 ${skin.handle}`} />
+      <span className={`h-3 w-8 rounded-t-md border-2 border-b-0 ${skin.handle}`} />
       <span
-        className={`relative grid w-full flex-1 place-items-center rounded-lg bg-gradient-to-b ${skin.body} shadow-clay-sm ring-1 ring-black/30`}
+        className={`relative grid w-full flex-1 place-items-center rounded-xl bg-gradient-to-b ${skin.body} shadow-clay ring-1 ring-black/30`}
       >
-        <span className="absolute left-[18%] top-2 h-1.5 w-3 rounded-sm bg-tsel-gold" />
-        <span className="absolute right-[18%] top-2 h-1.5 w-3 rounded-sm bg-tsel-gold" />
+        <span className="absolute left-[18%] top-2 h-1.5 w-3.5 rounded-sm bg-tsel-gold" />
+        <span className="absolute right-[18%] top-2 h-1.5 w-3.5 rounded-sm bg-tsel-gold" />
         {dim ? (
-          <Lock className="h-5 w-5 text-white/70" strokeWidth={2.5} />
+          <Lock className="h-6 w-6 text-white/70" strokeWidth={2.5} />
         ) : (
-          <span className="font-display text-xl font-extrabold text-tsel-gold">{index + 1}</span>
+          <span className="font-display text-[1.5rem] font-extrabold text-tsel-gold drop-shadow-[0_1px_0_rgba(0,0,0,0.25)]">{index + 1}</span>
         )}
       </span>
     </span>
